@@ -43,6 +43,11 @@ app.get('/', function (req, res) {
 app.get('/article_one',function(req, res){
     res.send(createTemplate(content));
 });
+var counter = 0;
+app.get('/counter',function(req, res){
+    counter = counter + 1;
+    res.send(counter.toString())
+});
 
 app.get('/article_two',function(req, res){
     res.send('article two will be served here')
