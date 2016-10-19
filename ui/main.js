@@ -4,5 +4,5 @@ var counts = 0
 button.onClick = function(){
     counts = counts + 1 ;
   var span = document.getElementById('count');
-  span.innerHTML = counts.toString();
+  span.innerTEXT = counts.toString();
 }
