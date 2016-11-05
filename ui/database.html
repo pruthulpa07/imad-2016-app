@@ -1,0 +1,18 @@
+<html>
+   <h1>DATA BASE TESTING</h1>
+    <hr/>
+    <script>
+        alert(localStorage.getItem('ms'));
+ var request=new XMLHttpRequest();
+     request.onreadystatechange= function(){
+         if(request.readyState==XMLHttpRequest.DONE){
+             if(request.status===200){
+                 var marriage_status=request.responseText;
+                 alert(marriage_status);
+             }
+         }
+     }
+     request.open('GET','http://localhost:8080/janformbeta/marriage_status=',true);
+        request.send(null);
+    </script>
+</html>
