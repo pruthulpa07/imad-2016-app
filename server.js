@@ -5,68 +5,68 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var content = {
-    title : 'Article ONE',
-};
-
-function createTemplate(data){
-    var title = data.title
-    var htmlTemplate = `<html>
-    <head>
-        <title>${title}</title>
-         <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-
-     
-    <body>
-        <div>
-            <a href ="/">Home</a>
-        </div>
-        <div>
-            <h3>Article One</h3>
-        </div>
-        <hr>
-        <div>
-            <p>
-                This is my first webapp...
-            </p>
-        </div>
-    </body>
-</html>`
-return htmlTemplate;
-}
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article_one',function(req, res){
-    res.send(createTemplate(content));
-});
-var counter = 0;
-app.get('/counter',function(req, res){
-    counter = counter + 1;
-    res.send(counter.toString())
+app.get('/jan-form', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'jan-form.html'));
 });
 
-app.get('/article_two',function(req, res){
-    res.send('article two will be served here')
+app.get('/audio_file.mp3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'audio_file.mp3'));
+});
+    
+    app.get('/shadi.mp3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'shadi.mp3'));
 });
 
-app.get('/article_three',function(req, res){
-    res.send('article three will be served here')
+app.get('/kaam.mp3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'kaam.mp3'));
+});
+
+app.get('/form.mp3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'form.mp3'));
+});
+
+app.get('/kya_kare.mp3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'kya_kare.mp3'));
+});
+
+app.get('/database', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'database.html'));
+});
+
+app.get('/janformbeta', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'janformbeta.html'));
+});
+
+app.get('/adminer', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'adminer.php'));
+});
+
+
+var counter=0;
+app.get('/counter', function (req, res) {
+    counter=counter+1;
+  res.send(counter.toString())
+});
+
+
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+app.get('/ui/modi.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'modi.jpg'));
 });
 
 
